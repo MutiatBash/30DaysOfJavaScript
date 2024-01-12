@@ -1,0 +1,63 @@
+html {
+	font-size: 10px;
+	background-color: rgb(234, 242, 250);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+.drum {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	align-items: center;
+	justify-content: center;
+  gap: 30px;
+}
+.keys {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.key {
+	border: 0.4rem solid black;
+	border-radius: 0.5rem;
+	margin: 1rem;
+	font-size: 1.5rem;
+	padding: 1rem 0.5rem;
+	transition: all 0.09s ease;
+	width: 10rem;
+	text-align: center;
+	color: white;
+	background: rgba(0, 0, 0, 0.954);
+	box-shadow: 0 0 1rem rgba(61, 61, 61, 0.604);
+	text-shadow: 0 0 0.5rem #b700ff;
+}
+
+.playing {
+	transform: scale(1.2);
+	border-color: #b700ff;
+	box-shadow: 0 0 1rem #b700ff;
+	text-shadow: 0 0 0.5rem #c63ffc;
+}
+
+kbd {
+	display: block;
+	font-size: 4rem;
+}
+
+.sound {
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	color: #dd9bf7;
+}
+h1 {
+	color: #580379;
+	text-align: center;
+	padding: 50px;
+	font-size: 50px;
+}
