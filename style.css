@@ -1,0 +1,60 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Courier New", Courier, monospace;
+}
+.header h1 {
+	text-align: center;
+	padding: 4rem;
+}
+a {
+	font-weight: 700;
+	color: rgb(76, 1, 108);
+}
+.main{
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.challenges {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	height: 100%;
+	gap: 2rem;
+	padding: 2rem;
+}
+.challenge {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.Challenge-img {
+	width: 100%;
+	height: 100%;
+}
+.Challenge-img img {
+	width: 100%;
+	height: 100%;
+	border: 0.5px solid gainsboro;
+	border-radius: 0.6rem;
+	object-fit: cover;
+}
+
+@media screen and (max-width: 600px) {
+	.challenges {
+		grid-template-columns: repeat(1, 1fr);
+		padding: 0rem;
+	}
+	.header h1 {
+		padding: 0.8rem;
+		font-size: 1.2rem;
+	}
+	.challenge {
+		gap: 0.7rem;
+	}
+    .main{
+        padding: 1.1rem;
+    }
+}
