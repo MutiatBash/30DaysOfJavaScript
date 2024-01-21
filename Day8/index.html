@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>HTML5 Canvas</title>
+		<link rel="icon" href="https://fav.farm/🔥" />
+	</head>
+	<body>
+		<div class="header">
+			<h1>HTML Canvas</h1>
+			<p>Draw on the screen</p>
+		</div>
+		<canvas id="draw" width="800" height="800"></canvas>
+		<script>
+			const canvas = document.querySelector("#draw");
+			const contextDraw = canvas.getContext("2d");
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+			contextDraw.strokeStyle = "#BADASS";
+			contextDraw.lineJoin = "round";
+			contextDraw.lineCap = "round";
+			contextDraw.lineWidth = 20;
+			contextDraw.globalCompositeOperation = "blur";
+
+			let isDrawing = false;
+			let lastX = 0;
+			let lastY = 0;
+			let hue = 0;
+			let direction = true;
+
+			function draw(e) {
+				if (!isDrawing) return;
+				console.log(e);
+				contextDraw.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+				contextDraw.beginPath();
+				contextDraw.moveTo(lastX, lastY);
+				contextDraw.lineTo(e.offsetX, e.offsetY);
+				contextDraw.stroke();
+				[lastX, lastY] = [e.offsetX, e.offsetY];
+
+				hue++;
+				if (hue >= 360) {
+					hue = 0;
+				}
+
+				// if (contextDraw.lineWidth >= 300 || contextDraw.lineWidth <= 1) {
+				if (contextDraw.lineWidth <= 1) {
+					direction = !direction;
+				}
+
+				if (direction) {
+					contextDraw.lineWidth;
+					// contextDraw.lineWidth++;
+				} else {
+					contextDraw.lineWidth--;
+				}
+			}
+
+			canvas.addEventListener("mousedown", (e) => {
+				isDrawing = true;
+				[lastX, lastY] = [e.offsetX, e.offsetY];
+			});
+
+			canvas.addEventListener("mousemove", draw);
+			canvas.addEventListener("mouseup", () => (isDrawing = false));
+			canvas.addEventListener("mouseout", () => (isDrawing = false));
+		</script>
+		<style>
+            *{
+                margin:0;
+                padding:0;
+            }
+			html,
+			body {
+				margin: 0;
+			}
+            .header{
+                padding:2rem 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap:0.8rem;
+            }
+            .header h1{
+                font-family: cursive;
+                color:darkorchid;
+            }
+		</style>
+	</body>
+</html>
