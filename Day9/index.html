@@ -6,7 +6,7 @@
 		<link rel="icon" href="https://fav.farm/🔥" />
 	</head>
 	<body>
-		<p onClick="makeGreen()">Click Me!</p>
+		<p onClick="changeColor()">Click Me!</p>
 		<div class="user"><h2 class="name"></h2></div>
 
 		<script>
@@ -15,9 +15,9 @@
 				{ name: "hugo", age: 8 },
 			];
 
-			function makeGreen() {
+			function changeColor() {
 				const p = document.querySelector("p");
-				p.style.color = "#BADA55";
+				p.style.color = "purple";
 				p.style.fontSize = "50px";
 			}
 
